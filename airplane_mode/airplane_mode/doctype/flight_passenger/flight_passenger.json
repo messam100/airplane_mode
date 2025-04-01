@@ -8,7 +8,9 @@
  "field_order": [
   "first_name",
   "last_name",
-  "date_of_birth"
+  "date_of_birth",
+  "column_break_nyyt",
+  "full_name"
  ],
  "fields": [
   {
@@ -29,6 +31,15 @@
    "in_list_view": 1,
    "label": "Date Of Birth",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nyyt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Read Only",
+   "label": "Full Name"
   }
  ],
  "grid_page_length": 50,
@@ -39,7 +50,7 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2025-03-09 00:08:34.925291",
+ "modified": "2025-03-09 01:31:33.779586",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Flight Passenger",
@@ -64,5 +75,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "first_name"
+ "title_field": "full_name"
 }
