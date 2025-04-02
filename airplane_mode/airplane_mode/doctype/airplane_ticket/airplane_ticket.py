@@ -17,8 +17,7 @@ class AirplaneTicket(Document):
 			frappe.throw(_("Should be status filed equal 'Boarded'"))
 
 	def before_insert(self):
-		# self.set_random_seat()
-		pass
+		self.set_random_seat()
 
 	def calculate_total_amount(self):
 		total_add_on_amount = sum([item.amount for item in self.add_ons])
