@@ -1,6 +1,6 @@
 ### Airplane Mode
 
-Do my assignment of day 1
+Do my assignment
 
 ### Installation
 
