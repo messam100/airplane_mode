@@ -1,0 +1,37 @@
+[
+ {
+  "description": "Lounge Access",
+  "docstatus": 0,
+  "doctype": "Airplane Ticket Add-on Type",
+  "modified": "2025-04-08 00:59:11.070050",
+  "name": "Lounge Access"
+ },
+ {
+  "description": "Wi-Fi",
+  "docstatus": 0,
+  "doctype": "Airplane Ticket Add-on Type",
+  "modified": "2025-04-08 00:59:20.984443",
+  "name": "Wi-Fi"
+ },
+ {
+  "description": "Extra Baggage",
+  "docstatus": 0,
+  "doctype": "Airplane Ticket Add-on Type",
+  "modified": "2025-04-08 00:58:03.304433",
+  "name": "Extra Baggage"
+ },
+ {
+  "description": "Meals",
+  "docstatus": 0,
+  "doctype": "Airplane Ticket Add-on Type",
+  "modified": "2025-04-08 00:57:21.280506",
+  "name": "Meals"
+ },
+ {
+  "description": "Priority Boarding ",
+  "docstatus": 0,
+  "doctype": "Airplane Ticket Add-on Type",
+  "modified": "2025-04-08 00:58:38.625196",
+  "name": "Priority Boarding"
+ }
+]

@@ -1,6 +1,13 @@
-{% extends "templates/web.html" %}
+<!DOCTYPE html>
+<html>
 
-{% block page_content %}
+<head>
+    <title>Show <Menu></Menu></title>
+</head>
+
+<body>
     {% set color = frappe.form_dict.color or "black" %}
     <div style="width: 750px; height: 250px; background-color: {{ color }};"></div>
-{% endblock %}
+</body>
+
+</html>

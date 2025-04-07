@@ -17,7 +17,7 @@ class AirplaneTicket(Document):
 			frappe.throw(_("Should be status filed equal 'Boarded'"))
 
 	def before_insert(self):
-		self.set_random_seat()
+		self.set_specific_seat()
 
 	def calculate_total_amount(self):
 		total_add_on_amount = sum([item.amount for item in self.add_ons])
@@ -35,7 +35,17 @@ class AirplaneTicket(Document):
 
 		self.add_ons = unique_add_ons
 
-	def set_random_seat(self):
-		random_number = random.randint(1, 99)
-		random_letter = random.choice(['A', 'B', 'C', 'D', 'E'])
-		self.seat = f"{random_number}{random_letter}"
+	def set_specific_seat(self):
+		seat = frappe.get_all("Airplane Seat", filters={
+	        "airplane_flight": self.flight,
+	        "status": "Available"
+	    }, fields=["name", "seat_number"], limit=1)
+
+		if seat:
+			seat_doc = frappe.get_doc("Airplane Seat", seat[0].name)
+			seat_doc.status = "Booked"
+			seat_doc.save()
+
+			self.seat = seat_doc.seat_number
+		else:
+			frappe.throw(_("No seats available on this flight!"))

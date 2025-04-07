@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "autoname": "format: AS-{airplane_flight}-{seat_number}",
+ "creation": "2025-04-02 21:10:22.435123",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "seat_number",
+  "airplane_flight",
+  "column_break_gdxs",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "seat_number",
+   "fieldtype": "Data",
+   "label": "Seat Number"
+  },
+  {
+   "fieldname": "airplane_flight",
+   "fieldtype": "Link",
+   "label": "Airplane Flight",
+   "options": "Airplane Flight"
+  },
+  {
+   "fieldname": "column_break_gdxs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nAvailable\nBooked"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-03 22:24:37.118106",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Airplane Seat",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
