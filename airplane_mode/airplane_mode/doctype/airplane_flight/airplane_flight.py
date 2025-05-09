@@ -4,11 +4,13 @@
 import frappe
 from frappe.website.website_generator import WebsiteGenerator
 
-
 class AirplaneFlight(WebsiteGenerator):
 	def on_submit(self):
 		self.status = "Completed"
 		self.submit_boarded_tickets()
+
+	def on_update(self):
+		frappe.enqueue("airplane_mode.airplane_mode.doctype.airplane_flight.airplane_flight.update_tickets_gate_number", flight=self.name, gate=self.gate_number)
   
 	def after_insert(self):
 		frappe.enqueue("airplane_mode.airplane_mode.doctype.airplane_flight.airplane_flight.create_seats", flight_name=self.name)
@@ -35,3 +37,8 @@ def create_seats(flight_name):
 			seat.airplane_flight = flight_name
 			seat.status = "Available"
 			seat.insert(ignore_permissions=True)
+
+def update_tickets_gate_number(flight, gate):
+	tickets = frappe.get_all("Airplane Ticket", filters={"flight": flight}, fields=["name"])
+	for t in tickets:
+		frappe.db.set_value("Airplane Ticket", t.name, "gate_number", gate)

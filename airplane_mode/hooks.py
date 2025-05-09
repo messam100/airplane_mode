@@ -143,23 +143,11 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"airplane_mode.tasks.all"
-# 	],
-# 	"daily": [
-# 		"airplane_mode.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"airplane_mode.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"airplane_mode.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"airplane_mode.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"monthly": [
+		"airplane_mode.airport_shop.utils.scheduler_events.send_rent_reminders"
+	],
+}
 
 # Testing
 # -------
@@ -239,6 +227,7 @@ app_license = "mit"
 
 fixtures = [
     {
-        "dt": "Airplane Ticket Add-on Type"
+        "dt": "Airplane Ticket Add-on Type",
+        "dt": "Shop Type",
     }
 ]

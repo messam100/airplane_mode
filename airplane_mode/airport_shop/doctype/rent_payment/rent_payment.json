@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2025-05-09 17:12:00.506683",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_shkv",
+  "naming_series",
+  "shop",
+  "shop_number",
+  "shop_name",
+  "tenant",
+  "tenant_name",
+  "column_break_ejy7",
+  "payment_date",
+  "amount_paid",
+  "status",
+  "subscription_details_section",
+  "subscription_duration",
+  "subscription_start_date",
+  "subscription_expiry_date",
+  "column_break_teqz",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_shkv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rent Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shop",
+   "options": "Shop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ejy7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Payment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Amount Paid",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "subscription_duration",
+   "fieldtype": "Int",
+   "label": "Subscription Duration (Month)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "subscription_start_date",
+   "fieldtype": "Date",
+   "label": "Subscription Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subscription_details_section",
+   "fieldtype": "Section Break",
+   "label": "Subscription Details"
+  },
+  {
+   "fieldname": "column_break_teqz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subscription_expiry_date",
+   "fieldtype": "Date",
+   "label": "Subscription Expiry Date",
+   "read_only": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nPending\nPaid\nCancelled"
+  },
+  {
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "label": "Shop Name",
+   "reqd": 1
+  },
+  {
+   "default": "AS-RP-.YY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "AS-RP-.YY.-"
+  },
+  {
+   "fetch_from": "tenant.tenant_name",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Tenant Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "shop.shop_number",
+   "fieldname": "shop_number",
+   "fieldtype": "Data",
+   "label": "Shop Number",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-05-09 20:24:54.820231",
+ "modified_by": "Administrator",
+ "module": "Airport Shop",
+ "name": "Rent Payment",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Pending"
+  },
+  {
+   "color": "Green",
+   "title": "Paid"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  }
+ ],
+ "title_field": "tenant",
+ "track_changes": 1,
+ "track_seen": 1
+}

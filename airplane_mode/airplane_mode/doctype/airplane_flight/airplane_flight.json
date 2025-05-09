@@ -24,6 +24,9 @@
   "is_published",
   "column_break_8nw0",
   "duration",
+  "crew_member_section",
+  "gate_number",
+  "flight_crew_member",
   "amended_from"
  ],
  "fields": [
@@ -134,6 +137,22 @@
    "fieldname": "is_published",
    "fieldtype": "Check",
    "label": "Is Published"
+  },
+  {
+   "fieldname": "crew_member_section",
+   "fieldtype": "Section Break",
+   "label": "Crew Member"
+  },
+  {
+   "fieldname": "flight_crew_member",
+   "fieldtype": "Table",
+   "label": "Flight Crew Member",
+   "options": "Flight Crew Member"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "grid_page_length": 50,
@@ -147,7 +166,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-05-09 08:30:35.395754",
+ "modified": "2025-05-09 09:37:38.677788",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",

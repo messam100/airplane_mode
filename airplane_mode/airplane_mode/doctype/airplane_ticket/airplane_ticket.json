@@ -11,6 +11,7 @@
   "column_break_lyxp",
   "flight",
   "seat",
+  "gate_number",
   "section_break_v4ix",
   "source_airport_code",
   "column_break_79om",
@@ -154,13 +155,21 @@
   {
    "fieldname": "column_break_ynk0",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "flight.gate_number",
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Gate Number",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-05-09 08:34:37.538321",
+ "modified": "2025-05-09 09:59:28.189469",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

@@ -1,0 +1,9 @@
+<div class="border rounded p-3 mb-1 bg-white shadow-sm">
+	<h3 class="mb-1 font-weight-bold">{{ doc.shop_name or "Store for Reant" }}</h3>
+	<p class="text-muted mb-1">Type: {{ doc.shop_type }}</p>
+	<p class="text-muted mb-1">Status: <strong>{{ doc.lease_status }}</strong></p>
+
+	<a href="/shops/{{ doc.name }}" class="text-primary mt-2 d-inline-block">🔍 View Details</a>
+</div>
+
+<!-- this is a sample default list template -->
