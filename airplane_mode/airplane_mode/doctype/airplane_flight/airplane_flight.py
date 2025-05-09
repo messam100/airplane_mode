@@ -25,6 +25,7 @@ class AirplaneFlight(WebsiteGenerator):
 			ticket_doc.submit()
 
 def create_seats(flight_name):
+    #TODO: Take Max Number Form Capacity (Airplane Doctype)
 	seat_rows = range(1, 21)
 	seat_columns = ['A', 'B', 'C', 'D', 'E', 'F']
 	for row in seat_rows:

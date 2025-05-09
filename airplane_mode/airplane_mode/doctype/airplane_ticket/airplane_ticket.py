@@ -2,7 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
-import random
+# import random
 from frappe import _
 from frappe.model.document import Document
 
@@ -11,6 +11,7 @@ class AirplaneTicket(Document):
 	def validate(self):
 		self.remove_duplicate_addons()
 		self.calculate_total_amount()
+		self.prevent_overbooking()
 
 	def on_submit(self):
 		if self.status != "Boarded":
@@ -34,6 +35,20 @@ class AirplaneTicket(Document):
 				unique_add_ons.append(item)
 
 		self.add_ons = unique_add_ons
+
+	def prevent_overbooking(self):
+		flight_doc = frappe.get_doc("Airplane Flight", self.flight)
+		airplane_doc = frappe.get_doc("Airplane", flight_doc.airplane)
+		airplane_capacity = airplane_doc.capacity or 0
+
+		ticket_count = frappe.db.count("Airplane Ticket", {
+            "flight": self.flight,
+            "name": ["!=", self.name],
+            "docstatus": ["<", 2]
+        })
+
+		if ticket_count >= airplane_capacity:
+			frappe.throw(_("Can not book ticket. The airplane is fully booked."))
 
 	def set_specific_seat(self):
 		seat = frappe.get_all("Airplane Seat", filters={

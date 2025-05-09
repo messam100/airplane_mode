@@ -37,7 +37,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-03 22:24:37.118106",
+ "modified": "2025-05-08 18:11:41.761690",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Seat",
@@ -60,5 +60,6 @@
  "row_format": "Dynamic",
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "seat_number"
 }
